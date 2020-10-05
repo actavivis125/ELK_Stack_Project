@@ -150,9 +150,9 @@ The easiest way to copy the playbooks is to use Git:
 
 $ cd /etc/ansible
 $ mkdir files
-# Clone Repository + IaC Files
+#Clone Repository + IaC Files
 $ git clone https://github.com/clayjoseph1994/ELK_Stack_Project.git
-# Move Playbooks and hosts file Into `/etc/ansible`
+#Move Playbooks and hosts file Into `/etc/ansible`
 $ cp ELK_Stack_Project/playbooks/* .
 $ cp ELK_Stack_Project/files/* ./files
 
@@ -190,13 +190,13 @@ The filebeat page lists the details of editing this correctly, but all I had to 
 
 #-------------------------- Elasticsearch output -------------------------------
 output.elasticsearch:
-  # Boolean flag to enable or disable the output module.
+  #Boolean flag to enable or disable the output module.
   #enabled: true
 
-  # Array of hosts to connect to.
-  # Scheme and port can be left out and will be set to the default (http and 9200)
-  # In case you specify and additional path, the scheme is required: http://localhost:9200/path
-  # IPv6 addresses should always be defined as: https://[2001:db8::1]:9200
+  #Array of hosts to connect to.
+  #Scheme and port can be left out and will be set to the default (http and 9200)
+  #In case you specify and additional path, the scheme is required: http://localhost:9200/path
+  #IPv6 addresses should always be defined as: https://[2001:db8::1]:9200
   hosts: ["10.2.0.4:9200"]
   username: "elastic"
   password: "changeme" # TODO: Change this to the password you set
@@ -212,42 +212,42 @@ Make sure the parts of the file specified below match this (or whatever IPs you 
 :
 #============================== Kibana =====================================
 
-# Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana API.
-# This requires a Kibana endpoint configuration.
+#Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana API.
+#This requires a Kibana endpoint configuration.
 setup.kibana:
   host: "10.2.0.4:5601"
 
-  # Kibana Host
-  # Scheme and port can be left out and will be set to the default (http and 5601)
-  # In case you specify and additional path, the scheme is required: http://localhost:5601/path
-  # IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
+  #Kibana Host
+  #Scheme and port can be left out and will be set to the default (http and 5601)
+  #In case you specify and additional path, the scheme is required: http://localhost:5601/path
+  #IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
   #host: "localhost:5601"
 
-  # Kibana Space ID
-  # ID of the Kibana Space into which the dashboards should be loaded. By default,
-  # the Default Space will be used.
+  #Kibana Space ID
+  #ID of the Kibana Space into which the dashboards should be loaded. By default,
+  #the Default Space will be used.
   #space.id:
 
 #============================= Elastic Cloud ==================================
 
-# These settings simplify using Metricbeat with the Elastic Cloud (https://cloud.elastic.co/).
+#These settings simplify using Metricbeat with the Elastic Cloud (https://cloud.elastic.co/).
 
-# The cloud.id setting overwrites the `output.elasticsearch.hosts` and
-# `setup.kibana.host` options.
-# You can find the `cloud.id` in the Elastic Cloud web UI.
+#The cloud.id setting overwrites the `output.elasticsearch.hosts` and
+#`setup.kibana.host` options.
+#You can find the `cloud.id` in the Elastic Cloud web UI.
 #cloud.id:
 
-# The cloud.auth setting overwrites the `output.elasticsearch.username` and
-# `output.elasticsearch.password` settings. The format is `<user>:<pass>`.
+#The cloud.auth setting overwrites the `output.elasticsearch.username` and
+#`output.elasticsearch.password` settings. The format is `<user>:<pass>`.
 #cloud.auth:
 
 #================================ Outputs =====================================
 
-# Configure what output to use when sending the data collected by the beat.
+#Configure what output to use when sending the data collected by the beat.
 
 #-------------------------- Elasticsearch output ------------------------------
 output.elasticsearch:
-  # Array of hosts to connect to.
+  #Array of hosts to connect to.
   hosts: ["10.2.0.4:9200"]
   username: "elastic"
   password: "changeme"
