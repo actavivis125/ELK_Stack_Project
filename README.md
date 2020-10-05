@@ -78,7 +78,7 @@ The Ansible playbook implements the following tasks:
 -Downloading and launching a Docker ELK container
 
 The Ansible playbook can be found in the YAML file elk.yml in this repo, and is also included here for convenience
----
+"---" (ignore quotes, I am ust including to circumvent the markup language turning this into a line)
 - name: Config elk VM with Docker
   hosts: elkservers
   remote_user: puzzlegeek
@@ -125,8 +125,7 @@ The Ansible playbook can be found in the YAML file elk.yml in this repo, and is 
           - 5044:5044
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-
-![TODO: Update the path with the name of your screenshot of docker ps output](images/DockerPS.png)
+(images/DockerPS.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -252,4 +251,5 @@ output.elasticsearch:
   username: "elastic"
   password: "changeme"
 
-Congratulations! You have an ELK Stack Server monitoring system logs on two web servers with filebeat and metrics with metricbeat. If you have any issues/questions let me know, and I will try my best to help!
+
+###Congratulations! You have an ELK Stack Server monitoring system logs on two web servers with filebeat and metrics with metricbeat. If you have any issues/questions let me know, and I will try my best to help!
