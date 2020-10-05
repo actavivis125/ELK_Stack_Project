@@ -77,34 +77,34 @@ The Ansible playbook implements the following tasks:
 -Setting the system memory necessary for this machine to work properly
 -Downloading and launching a Docker ELK container
 
-The Ansible playbook can be found in the YAML file elk.yml in this repo, and is also included here for convenience:
+The Ansible playbook can be found in the YAML file elk.yml in this repo, and is also included here for convenience
 ---
 - name: Config elk VM with Docker
   hosts: elkservers
   remote_user: puzzlegeek
   become: true
   tasks:
-    # Use apt module
+     #Use apt module
     - name: Install docker.io
       apt:
         update_cache: yes
         name: docker.io
         state: present
 
-      # Use apt module
+      #Use apt module
     - name: Install pip3
       apt:
         force_apt_get: yes
         name: python3-pip
         state: present
 
-      # Use pip module
+      #Use pip module
     - name: Install Docker python module
       pip:
         name: docker
         state: present
 
-      # Use sysctl module
+      #Use sysctl module
     - name: Use more memory
       sysctl:
         name: vm.max_map_count
@@ -112,7 +112,7 @@ The Ansible playbook can be found in the YAML file elk.yml in this repo, and is 
         state: present
         reload: yes
 
-      # Use docker_container module
+      #Use docker_container module
     - name: download and launch a docker elk container
       docker_container:
         name: elk
