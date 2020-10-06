@@ -252,4 +252,4 @@ output.elasticsearch:
   password: "changeme"
 
 
-###Congratulations! You have an ELK Stack Server monitoring system logs on two web servers with filebeat and metrics with metricbeat. If you have any issues/questions let me know, and I will try my best to help!
+### Congratulations! You have an ELK Stack Server monitoring system logs on two web servers with filebeat and metrics with metricbeat. If you have any issues/questions let me know, and I will try my best to help!
