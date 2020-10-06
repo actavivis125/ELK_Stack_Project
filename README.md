@@ -146,25 +146,25 @@ SSH into the control node (in my case it was the Docker Anisble container on the
 
 The easiest way to copy the playbooks is to use Git:
 
-$ cd /etc/ansible
-$ mkdir files
-#Clone Repository + IaC Files
-$ git clone https://github.com/clayjoseph1994/ELK_Stack_Project.git
-#Move Playbooks and hosts file Into `/etc/ansible`
-$ cp ELK_Stack_Project/playbooks/* .
-$ cp ELK_Stack_Project/files/* ./files
+    $ cd /etc/ansible
+    $ mkdir files
+    #Clone Repository + IaC Files
+    $ git clone https://github.com/clayjoseph1994/ELK_Stack_Project.git
+    #Move Playbooks and hosts file Into `/etc/ansible`
+    $ cp ELK_Stack_Project/playbooks/* .
+    $ cp ELK_Stack_Project/files/* ./files
 
 Next, you must create a hosts file to specify which VMs to run each playbook on. Run the commands below or copy the hosts file I have included in the files directory:
 
-$ cd /etc/ansible
-$ cat > hosts <<EOF
-[webservers]
-10.1.0.5
-10.2.0.6
+    $ cd /etc/ansible
+    $ cat > hosts <<EOF
+    [webservers]
+    10.1.0.5
+    10.2.0.6
 
-[elk]
-10.2.0.4
-EOF
+    [elk]
+    10.2.0.4
+    EOF
 
 After this, the commands below run the playbook:
 
