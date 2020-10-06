@@ -5,7 +5,9 @@ This is a project I worked on in the cybersecurity bootcamp where several resour
 
 The files in this repository were used to configure the network depicted below.
 
-(images/ELK_Stack_TopologyDetails.png) [NOTE: the network diagram has differing IP addresses from the ones Azure assigned me by default]
+![alt text](https://github.com/clayjoseph1994/ELK_Stack_Project/blob/master/Images/ELK_Stack_TopologyDetails.png) 
+
+[NOTE: the network diagram has differing IP addresses from the ones Azure assigned me by default]
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml file(s) may be used to install only certain pieces of it, such as Filebeat.
 
@@ -122,7 +124,7 @@ The Ansible playbook can be found in the YAML file elk.yml in this repo, and is 
             - 5044:5044
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-(images/DockerPS.png)
+![alt text](https://github.com/clayjoseph1994/ELK_Stack_Project/blob/master/Images/DockerPS.PNG)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -166,10 +168,10 @@ EOF
 
 After this, the commands below run the playbook:
 
-$ cd /etc/ansible
-$ ansible-playbook elk.yml elk
-$ ansible-playbook filebeat-playbook.yml webservers
-$ ansible-playbook metricbeat-playbook.yml webservers
+    $ cd /etc/ansible
+    $ ansible-playbook elk.yml elk
+    $ ansible-playbook filebeat-playbook.yml webservers
+    $ ansible-playbook metricbeat-playbook.yml webservers
 
 To verify success, wait five minutes to give ELK time to start up.
 
@@ -180,7 +182,8 @@ To ensure filebeat is working properly, from your ELK Server home page (Kibana) 
 If this is not the case, you likely need to add a filebeat configuration file and add your ELK Server IP address in this config.
 
 From back on your Ansible container on the JumpBox:
-curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/files/filebeat-config.yml
+          
+    #curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/files/filebeat-config.yml
 
 The filebeat page lists the details of editing this correctly, but all I had to change was the line under Elasticsearch output. Because the private IP of my ELK Server is 10.2.0.4, I added this to the config file in this section like shown below:
 
